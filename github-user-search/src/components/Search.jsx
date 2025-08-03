@@ -50,6 +50,7 @@ function Search() {
         <div>
           <img src={userData.avatar_url} alt="user's avatar" />
           <p>{userData.name}</p>
+          <p>Username: {userData.login}</p>
           <a href={userData.html_url} target="_blank">
             View Github profile
           </a>
