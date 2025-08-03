@@ -1,16 +1,27 @@
 import axios from "axios";
-const GITHUB_API_KEY = import.meta.env.VITE_APP_GITHUB_API_KEY;
 
-const headers = {
-  Authorization: `Bearer ${GITHUB_API_KEY}`,
-};
+export async function fetchUserData(username, location = "", minRepos = 0) {
+  const queryParts = [`${username} in:login`];
 
-fetch("https://api.github.com/user", { headers })
-  .then((res) => res.json())
-  .then((data) => console.log(data));
+  if (location) {
+    queryParts.push(`location:${location}`);
+  }
 
-export async function fetchUserData(username) {
-  const url = `https://api.github.com/users/${username}`;
+  if (minRepos > 0) {
+    queryParts.push(`repos:>=${minRepos}`);
+  }
+
+  const query = queryParts.join(" ");
+  const url = `https://api.github.com/search/users?q=${encodeURIComponent(query)}`;
+
   const response = await axios.get(url);
-  return response.data;
+
+  if (response.data.total_count === 0) {
+    throw new Error("No users found.");
+  }
+
+  const user = response.data.items[0];
+  const userDetails = await axios.get(`https://api.github.com/users/${user.login}`);
+
+  return userDetails.data;
 }

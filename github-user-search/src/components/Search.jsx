@@ -17,7 +17,7 @@ function Search() {
     setLoading(true);
 
     try {
-      const data = await fetchUserData(username);
+      const data = await fetchUserData(username, location, parseInt(repo, 10));
 
       const locationMatch = location
         ? data.location?.toLowerCase().includes(location.toLowerCase())
@@ -44,7 +44,9 @@ function Search() {
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-white shadow-md rounded-lg p-6 space-y-4"
       >
-        <h2 className="text-xl font-semibold text-center">Search GitHub User</h2>
+        <h2 className="text-xl font-semibold text-center">
+          Search GitHub User
+        </h2>
 
         <div className="space-y-1">
           <label className="block font-medium">Username</label>
