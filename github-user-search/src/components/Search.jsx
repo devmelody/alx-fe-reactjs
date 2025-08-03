@@ -6,18 +6,19 @@ function Search() {
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
   const [repo, setRepo] = useState("");
-  const [userData, setUserData] = useState(null);
+  const [users, setUsers] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setUserData(null);
+    setUsers([]);
     setError("");
     setLoading(true);
 
     try {
       const data = await fetchUserData(username);
+
       const locationMatch = location
         ? data.location?.toLowerCase().includes(location.toLowerCase())
         : true;
@@ -25,12 +26,12 @@ function Search() {
       const repoMatch = repo ? data.public_repos >= parseInt(repo, 10) : true;
 
       if (locationMatch && repoMatch) {
-        setUserData(data);
+        setUsers([data]);
       } else {
         setError("No user matches the advanced criteria.");
       }
-    } catch (err) {
-      setError("Looks like we can't find the user.", err.message);
+    } catch {
+      setError("Looks like we can't find the user.");
     }
 
     setLoading(false);
@@ -90,25 +91,36 @@ function Search() {
       {loading && <p className="mt-4 text-blue-600 font-medium">Loading...</p>}
       {error && <p className="mt-4 text-red-500 font-semibold">{error}</p>}
 
-      {userData && (
-        <div className="mt-6 w-full max-w-md bg-white rounded-lg shadow p-6 text-center space-y-2">
-          <img
-            src={userData.avatar_url}
-            alt="User Avatar"
-            className="w-24 h-24 rounded-full mx-auto"
-          />
-          <h3 className="text-lg font-bold">{userData.name}</h3>
-          <p className="text-sm text-gray-700">@{userData.login}</p>
-          <p className="text-sm text-gray-600">📍 {userData.location || "Unknown"}</p>
-          <p className="text-sm text-gray-600">📦 {userData.public_repos} Public Repos</p>
-          <a
-            href={userData.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-2 text-blue-500 hover:underline"
-          >
-            View GitHub Profile
-          </a>
+      {users.length > 0 && (
+        <div className="mt-6 grid gap-6 w-full max-w-md">
+          {users.map((user) => (
+            <div
+              key={user.id}
+              className="bg-white rounded-lg shadow p-6 text-center space-y-2"
+            >
+              <img
+                src={user.avatar_url}
+                alt="User Avatar"
+                className="w-24 h-24 rounded-full mx-auto"
+              />
+              <h3 className="text-lg font-bold">{user.name}</h3>
+              <p className="text-sm text-gray-700">@{user.login}</p>
+              <p className="text-sm text-gray-600">
+                📍 {user.location || "Unknown"}
+              </p>
+              <p className="text-sm text-gray-600">
+                📦 {user.public_repos} Public Repos
+              </p>
+              <a
+                href={user.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 text-blue-500 hover:underline"
+              >
+                View GitHub Profile
+              </a>
+            </div>
+          ))}
         </div>
       )}
     </div>
