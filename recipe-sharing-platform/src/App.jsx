@@ -1,11 +1,10 @@
-import './index.css'
-import HomePage from './components/Homepage'
+import "./index.css";
+import HomePage from "./components/Homepage";
 
 export default function App() {
   return (
-    <main className='bg-gray-50 text-black text-center hover:shadow-2xl my-auto'>
-
-    <HomePage />
+    <main className="bg-gray-50 text-black text-center hover:shadow-2xl my-auto">
+      <HomePage />
     </main>
-  )
+  );
 }
