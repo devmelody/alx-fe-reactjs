@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import recipeData from "../data.json";
 
-function Homepage() {
+function HomePage() {
   const [recipes, setRecipe] = useState([]);
 
   useEffect(() => {
@@ -24,4 +24,4 @@ function Homepage() {
     </div>
   )
 }
-export default Homepage;
+export default HomePage;
