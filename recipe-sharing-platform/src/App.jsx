@@ -1,9 +1,11 @@
 import './index.css'
+import Homepage from './components/Homepage'
 
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <main className='bg-gray-50 text-black text-center hover:shadow-2xl my-auto'>
+
+    <Homepage />
+    </main>
   )
 }
