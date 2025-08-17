@@ -5,9 +5,9 @@ function AddRecipeForm() {
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
 
-  const [errors, setErrors] = useState({}); // ✅ checker looks for setErrors
+  const [errors, setErrors] = useState({});
 
-  function validate() {                     // ✅ checker looks for validate
+  function validate() {
     const newErrors = {};
 
     if (!title.trim()) {
@@ -47,47 +47,52 @@ function AddRecipeForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 max-w-lg mx-auto shadow-lg rounded-lg bg-white">
-      <h2 className="text-lg font-bold text-center mt-3 mb-5">
+    <form 
+      onSubmit={handleSubmit} 
+      className="p-4 md:p-8 max-w-md md:max-w-xl w-full mx-auto shadow-lg rounded-2xl bg-white"
+    >
+      <h2 className="text-lg md:text-2xl font-bold text-center mt-3 mb-5">
         Add New Recipe
       </h2>
 
       <div>
         <input
-          className="border w-full text-center border-gray-400 p-2 rounded"
+          className="border w-full border-gray-300 p-2 md:p-3 rounded text-base md:text-lg"
           type="text"
           placeholder="Recipe title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
+        {errors.title && <p className="text-red-500 text-sm md:text-base mt-1">{errors.title}</p>}
       </div>
 
       <div className="mt-5">
         <textarea
-          className="border w-full text-center border-gray-400 p-2 rounded"
-          placeholder="Ingredients"
+          className="border w-full border-gray-300 p-2 md:p-3 rounded text-base md:text-lg"
+          placeholder="Ingredients (comma separated)"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
+          rows={4}
         />
         {errors.ingredients && (
-          <p className="text-red-500 text-sm">{errors.ingredients}</p>
+          <p className="text-red-500 text-sm md:text-base mt-1">{errors.ingredients}</p>
         )}
       </div>
 
       <div className="mt-5">
         <textarea
-          className="border w-full text-center border-gray-400 p-2 rounded"
+          className="border w-full border-gray-300 p-2 md:p-3 rounded text-base md:text-lg"
           placeholder="Steps"
           value={steps}
           onChange={(e) => setSteps(e.target.value)}
+          rows={5}
         />
-        {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
+        {errors.steps && <p className="text-red-500 text-sm md:text-base mt-1">{errors.steps}</p>}
       </div>
 
       <button
         type="submit"
-        className="border w-full bg-slate-500 mt-10 text-white text-center border-gray-400 py-2 rounded"
+        className="w-full bg-slate-600 hover:bg-slate-700 mt-8 text-white text-base md:text-lg py-2 md:py-3 rounded-lg transition-colors duration-200"
       >
         Submit
       </button>
