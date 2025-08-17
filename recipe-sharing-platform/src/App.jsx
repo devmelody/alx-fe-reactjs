@@ -1,10 +1,16 @@
 import "./index.css";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import HomePage from "./components/Homepage";
+import RecipeDetail from './components/RecipeDetail'
 
 export default function App() {
   return (
-    <main className="bg-gray-50 text-black text-center hover:shadow-2xl my-auto">
-      <HomePage />
-    </main>
+    <Router>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/recipe/:id' element={<RecipeDetail />} />
+      </Routes>
+    </Router>
   );
 }
+

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import recipeData from "../data.json";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [recipes, setRecipe] = useState([]);
@@ -13,6 +14,8 @@ function HomePage() {
 
         <h1 className="text-xl font-bold mb-4 text-center col-span-full">Recipe finder</h1>
         {recipes.map((recipe) => (
+          <Link to={`/recipe/${recipe.id}`}>
+
             <div className="flex flex-col items-center" key={recipe.id}>
                     <img className="w-24 h-24 shadow hover:shadow-lg transition-shadow rounded-xl" src={recipe.image} />
                 
@@ -20,6 +23,7 @@ function HomePage() {
                     <p className="text-sm font-semibold mt-1 mb-4 text-center">{recipe.summary}</p>
                     
             </div>
+          </Link>
         ))}
     </div>
   )
