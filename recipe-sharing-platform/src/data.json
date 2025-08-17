@@ -3,55 +3,181 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   },
   {
     "id": 3,
     "title": "Avocado Toast",
     "summary": "Smashed avocado on crusty bread, topped with a sprinkle of salt, pepper, and chili flakes.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   },
   {
     "id": 4,
     "title": "Pepperoni pizza",
     "summary": "Pepperoni chunks on pizza, topped with a sprinkle of sausage, butter, and tomato.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   },
    {
     "id": 5,
     "title": "Avocado Toast",
     "summary": "Smashed avocado on crusty bread, topped with a sprinkle of salt, pepper, and chili flakes.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   },
   {
     "id": 6,
     "title": "Pepperoni pizza",
     "summary": "Pepperoni chunks on pizza, topped with a sprinkle of sausage, butter, and tomato.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   },
    {
     "id": 7,
     "title": "Avocado Toast",
     "summary": "Smashed avocado on crusty bread, topped with a sprinkle of salt, pepper, and chili flakes.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   },
   {
     "id": 8,
     "title": "Pepperoni pizza",
     "summary": "Pepperoni chunks on pizza, topped with a sprinkle of sausage, butter, and tomato.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   },
   {
     "id": 9,
     "title": "Pepperoni pizza",
     "summary": "Pepperoni chunks on pizza, topped with a sprinkle of sausage, butter, and tomato.",
-    "image": "https://placehold.co/400"
+    "image": "https://placehold.co/400",
+      "ingredients": [
+      "200g spaghetti",
+      "100g minced beef",
+      "1 onion",
+      "2 garlic cloves",
+      "400g tomato sauce"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package instructions.",
+      "In a pan, sauté onion and garlic.",
+      "Add minced beef and cook until browned.",
+      "Pour in tomato sauce and simmer for 15 minutes.",
+      "Serve sauce over spaghetti."
+    ]
   }
 ]
 

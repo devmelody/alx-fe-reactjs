@@ -18,7 +18,7 @@ if (!recipe) {
     return <p className='text-center text-xl text-orange-500'>No recipe found</p>
 } else {
      return (
-    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 place-items-center p-4 ">
+    <div className="grid grid-cols-1  gap-4 place-items-center p-4 ">
 
         <h1 className="text-xl font-bold mb-4 text-center col-span-full">Recipe finder</h1>
        
@@ -29,8 +29,27 @@ if (!recipe) {
                     <p className="text-sm font-semibold mt-1 mb-4 text-center">{recipe.summary}</p>
                     
             </div>
-        
+             <h2 className="text-xl font-semibold mb-2">Ingredients</h2>
+      <ul className="list-disc list-inside mb-6">
+        {recipe.ingredients.map((ingredient, index) => (
+          <li key={index} className="text-base">
+            {ingredient}
+          </li>
+        ))}
+      </ul>
+
+      
+      <h2 className="text-xl font-semibold mb-2">Instructions</h2>
+      <ol className="list-decimal list-inside text-base max-w-2xl text-left">
+        {recipe.instructions.map((step, index) => (
+          <li key={index} className="mb-2">
+            {step}
+          </li>
+        ))}
+      </ol>
     </div>
+        
+    
   )
 }
 
