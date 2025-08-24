@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* globals describe test expect */
-
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -28,12 +27,8 @@ describe("TodoList Component", () => {
     render(<TodoList />);
     const todoItem = screen.getByText("Learn React");
 
-    // Initially not completed
     expect(todoItem).toHaveStyle("text-decoration: none");
-
     fireEvent.click(todoItem);
-
-    // After toggle → line-through
     expect(todoItem).toHaveStyle("text-decoration: line-through");
   });
 
