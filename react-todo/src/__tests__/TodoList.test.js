@@ -6,13 +6,13 @@ import "@testing-library/jest-dom";
 import TodoList from "../components/TodoList";
 
 describe("TodoList Component", () => {
-  test("renders initial todos", () => {
+  test("TodoList renders initial todos", () => {
     render(<TodoList />);
     expect(screen.getByText("Learn React")).toBeInTheDocument();
     expect(screen.getByText("Build a Todo App")).toBeInTheDocument();
   });
 
-  test("adds a new todo", () => {
+  test("TodoList allows adding a new todo", () => {
     render(<TodoList />);
     const input = screen.getByTestId("todo-input");
     const form = screen.getByTestId("add-todo-form");
@@ -23,7 +23,7 @@ describe("TodoList Component", () => {
     expect(screen.getByText("New Todo")).toBeInTheDocument();
   });
 
-  test("toggles a todo", () => {
+  test("TodoList allows toggling a todo", () => {
     render(<TodoList />);
     const todoItem = screen.getByText("Learn React");
 
@@ -32,7 +32,7 @@ describe("TodoList Component", () => {
     expect(todoItem).toHaveStyle("text-decoration: line-through");
   });
 
-  test("deletes a todo", () => {
+  test("TodoList allows deleting a todo", () => {
     render(<TodoList />);
     const todoItem = screen.getByText("Learn React");
     const deleteButton = screen.getAllByTestId("delete-button")[0];
@@ -42,3 +42,4 @@ describe("TodoList Component", () => {
     expect(todoItem).not.toBeInTheDocument();
   });
 });
+
