@@ -1,39 +1,17 @@
 import React, { useState } from "react";
 
-// Add Todo Form Component
-function AddTodoForm({ onAdd }) {
-  const [text, setText] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!text.trim()) return;
-    onAdd(text);
-    setText("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit} data-testid="add-todo-form">
-      <input
-        type="text"
-        placeholder="Add a new todo"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        data-testid="todo-input"
-      />
-      <button type="submit">Add</button>
-    </form>
-  );
-}
-
-// Main TodoList Component
-export default function TodoList() {
+function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Build a Todo App", completed: true },
+    { id: 2, text: "Build a Todo App", completed: false },
   ]);
+  const [newTodo, setNewTodo] = useState("");
 
-  const addTodo = (text) => {
-    setTodos([...todos, { id: Date.now(), text, completed: false }]);
+  const addTodo = (e) => {
+    e.preventDefault();
+    if (!newTodo.trim()) return;
+    setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
+    setNewTodo("");
   };
 
   const toggleTodo = (id) => {
@@ -50,8 +28,15 @@ export default function TodoList() {
 
   return (
     <div>
-      <h1>Todo List</h1>
-      <AddTodoForm onAdd={addTodo} />
+      <form onSubmit={addTodo} data-testid="add-todo-form">
+        <input
+          type="text"
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+          data-testid="todo-input"
+        />
+        <button type="submit">Add</button>
+      </form>
       <ul>
         {todos.map((todo) => (
           <li
@@ -61,7 +46,6 @@ export default function TodoList() {
               textDecoration: todo.completed ? "line-through" : "none",
               cursor: "pointer",
             }}
-            data-testid="todo-item"
           >
             {todo.text}
             <button
@@ -71,7 +55,7 @@ export default function TodoList() {
               }}
               data-testid="delete-button"
             >
-              X
+              Delete
             </button>
           </li>
         ))}
@@ -79,3 +63,5 @@ export default function TodoList() {
     </div>
   );
 }
+
+export default TodoList;
