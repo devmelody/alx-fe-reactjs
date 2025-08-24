@@ -1,18 +1,16 @@
-/* eslint-disable no-undef */
-/* globals describe test expect */
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TodoList from "../components/TodoList";
 
-describe("TodoList Component", () => {
-  test("TodoList renders initial todos", () => {
+describe("TodoList component", () => {
+  test("renders initial todos", () => {
     render(<TodoList />);
     expect(screen.getByText("Learn React")).toBeInTheDocument();
     expect(screen.getByText("Build a Todo App")).toBeInTheDocument();
   });
 
-  test("TodoList allows adding a new todo", () => {
+  test("adds a new todo", () => {
     render(<TodoList />);
     const input = screen.getByTestId("todo-input");
     const form = screen.getByTestId("add-todo-form");
@@ -23,16 +21,20 @@ describe("TodoList Component", () => {
     expect(screen.getByText("New Todo")).toBeInTheDocument();
   });
 
-  test("TodoList allows toggling a todo", () => {
+  test("toggles a todo", () => {
     render(<TodoList />);
     const todoItem = screen.getByText("Learn React");
 
+    // Initially not completed
     expect(todoItem).toHaveStyle("text-decoration: none");
+
     fireEvent.click(todoItem);
+
+    // After toggle → completed
     expect(todoItem).toHaveStyle("text-decoration: line-through");
   });
 
-  test("TodoList allows deleting a todo", () => {
+  test("deletes a todo", () => {
     render(<TodoList />);
     const todoItem = screen.getByText("Learn React");
     const deleteButton = screen.getAllByTestId("delete-button")[0];
@@ -42,4 +44,3 @@ describe("TodoList Component", () => {
     expect(todoItem).not.toBeInTheDocument();
   });
 });
-
