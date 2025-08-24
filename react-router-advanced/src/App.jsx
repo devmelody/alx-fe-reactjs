@@ -3,7 +3,7 @@ import { Routes, Route, Link, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import BlogPost from "./pages/BlogPost";
-import Profile from "./pages/Profile";
+import Profile from "./components/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
