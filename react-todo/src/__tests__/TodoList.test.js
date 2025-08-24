@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 /* globals describe test expect */
 
 import React from "react";
